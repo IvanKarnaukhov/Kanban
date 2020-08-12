@@ -7,14 +7,17 @@ import Task from "./Task";
 function Column(props) {
 
 
-    const {tasks, title, changeTaskStatus} = props
+    const {tasks, changeTaskStatus, column} = props
 
   return (
     <div>
 
 <Col>
-    <h3>{title}</h3>
-  {tasks.filter(el=> el.status === title).map(el => <Task task={el} changeTaskStatus={changeTaskStatus}/>)}
+    <h3>{column.title}</h3>
+  {tasks
+      .filter(el=> el.status === column.status)
+      .sort((a, b) => b.priority - a.priority)
+      .map(el => <Task task={el} changeTaskStatus={changeTaskStatus}/>)}
 </Col>
 
 
