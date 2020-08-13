@@ -1,25 +1,31 @@
 import React, {useState} from 'react';
-import {Modal, ModalHeader, ModalBody, ModalFooter, Button, Label, Input} from 'reactstrap'
+import {Modal, ModalHeader, ModalBody, ModalFooter, Button, Label, Input, Row, Col} from 'reactstrap'
 
 
-function Controller(props) {
+function AddColumnModal(props) {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [newTitle, setNewTitle] = useState("")
 
+    const closeModel = () => {
+        props.addNewColumn(newTitle)
+        setIsModalOpen(false)
+        setNewTitle('')
+    }
 
 
     return (
         <>
-            <Button onClick={() => setIsModalOpen(true) }>Add new Task</Button>
+            <Button onClick={() => setIsModalOpen(true)}>Add new Task</Button>
             <Modal isOpen={isModalOpen}>
-                <ModalHeader> Add new Task </ModalHeader>
+                <ModalHeader> Add new Column </ModalHeader>
                 <ModalBody>
                     <Label>New Title</Label>
                     <Input type='text' value={newTitle} onChange={(e) => setNewTitle(e.target.value)}/>
+
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={()=> props.addNewTask(newTitle)}> Add new Task</Button>
+                    <Button onClick={closeModel}> Add new Column</Button>
                     {' '}
                     <Button onClick={() => setIsModalOpen(false)}>Cancel</Button>
                 </ModalFooter>
@@ -28,4 +34,4 @@ function Controller(props) {
     );
 }
 
-export default Controller;
+export default AddColumnModal;
