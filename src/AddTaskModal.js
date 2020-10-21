@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
 import {Modal, ModalHeader, ModalBody, ModalFooter, Button, Label, Input, Row, Col} from 'reactstrap'
 
-
 function AddTaskModal(props) {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [newTitle, setNewTitle] = useState("")
     const [newPriority, setNewPriority] = useState(0)
     const [newStatus, setNewStatus] = useState('todo')
+
     const closeModel = () => {
         props.addNewTask(newTitle, newPriority, newStatus)
         setIsModalOpen(false)
         setNewTitle('')
     }
-
 
     return (
         <>
@@ -39,7 +38,6 @@ function AddTaskModal(props) {
                                 <option value={'progress'}>Progress</option>
                                 <option value={'review'}>Review</option>
                                 <option value={'done'}>Done</option>
-
                             </Input>
                         </Col>
                     </Row>

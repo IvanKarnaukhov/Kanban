@@ -36,3 +36,245 @@
     transform: rotate(360deg);
   }
 }
+
+/* наполнение */
+
+* {                                  /* сброс настроек страницы от браузера */
+  padding: 0;                      /* отступ для текста по всем границам */
+  margin: 0;                       /* внешний отступ на всех четырех сторонах элемента */
+  box-sizing: border-box;          /* чтобы кокнтент не растягивал контейнер */
+}
+
+body {
+  font-family: 'Montserrat', serif;/* шрифт применен ко всему листу */
+  background: #f5f7fa;             /* цвет фона вокруг */
+  padding: 40px 20px 40px 20px;    /* отступ со всех сторон верх, лево, низ, право*/
+}
+
+.wrapper {
+  background: #ffffff;            /* цвет самой страницы */
+  display: flex;                  /* выравниваем по вертикали и по горизонтали */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 5px 9px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar {
+  background: #1e2939;
+  width: 370px;
+  flex-direction: column;         /* column чтоб задать им вертикальную ориентацию. row по горизонтали */
+  padding-top: 40px;              /* отступ элемента от страницы */
+  padding-bottom: 40px;
+}
+
+.my-photo {
+  width: 370px;
+}
+
+.about-me-container {
+  /*padding-left: 90px;           версия для староверов */
+  /*padding-right: 90px;*/
+  /*padding-top: 110px;*/
+  /*padding-bottom: 110px;*/
+  padding: 110px 90px;             /* короткая версия */
+
+}
+
+.contacts-container {
+  margin-top: 60px;               /* внешний отступ на всех четырех margin: 60px 40px 40px */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.contacts-title {
+  font-size: 22px;                /* размер шрифта */
+  font-weight: 700;               /* жирность текста 700 нормальный это 400 тонкий 200 */
+  line-height: 24px;              /* межстрочный интервал с верху и низу сразу*/
+  color: #ffffff;                 /* цвет */
+  margin-bottom: 20px;            /* отодвигает от верхнего контейнера */
+}
+
+.contact-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #525b67;
+}
+
+.contact-link-type {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.tech-skills-container {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 55px;
+}
+
+.tech-skills-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.tech-skill-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 15px;
+  color: #ff6b08
+}
+
+.tech-skill-text {
+  color: #d8dadd;
+}
+
+.soft-skills-container {
+  /*height: 200px;*/              /* высота контейнера, если убрать высоту то контент сам будет разширять высоту*/
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 55px;
+}
+
+.soft-skills-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.soft-skill-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 15px;
+  color: #ff6b08
+}
+
+.soft-skill-text {
+  color: #d8dadd;
+}
+
+.profession {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 23px;
+}
+
+.my-name {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 89px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 24px;
+  /*width: 500px;        ширину лучше не применять чтоб можно было отображать на разнх устройствах */
+  color: #595959;
+}
+
+.info-container {
+  margin-bottom: 65px;
+}
+
+.about-me-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #595959;
+}
+
+.tech-name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #595959;
+}
+
+.dots {
+  color: #bebebe;
+  font-weight: 100;
+}
+
+.project-item {
+  font-weight: 700;
+  margin-left: 17px;
+}
+
+.project-container {
+  margin-bottom: 55px;
+}
+
+.profession-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.profession-company {
+  color: #ff7011;
+}
+
+.profession-time {
+  color: #a8a8a8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.profession-divider {
+  color: #000000;
+}
+
+.profession-duties {
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+.profession-duties-item {
+  color: #595959;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 17px;
+}
+
+.education-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 21px;
+}
+
+.education-subtitle {
+  color: #ff6b08;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.profession-name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}

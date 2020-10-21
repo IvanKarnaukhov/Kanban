@@ -27,9 +27,9 @@ function App() {
 
     const addNewColumn = (title) => {
         const newColumn = {
-            id: Math.random(), title:title, status: "Do Again"
+            id: Math.random(), title: title, status: "Do Again"
         }
-        const newColumns = [...columns, newColumn ]
+        const newColumns = [...columns, newColumn]
         setColumns(newColumns)
     }
 
@@ -40,51 +40,55 @@ function App() {
             priority: newPriority,
             status: newStatus,
         }
-    const newTasks = [...tasks, newTask]
-    setTasks(newTasks)
-    }
-
-
-const changeTaskStatus = (taskId, direction) => {
-    const newTasks = tasks.map(el => {
-        if (el.id === taskId) {
-            if (direction === "right") el.status = statuses[statuses.indexOf(el.status) + 1]
-            if (direction === "left") el.status = statuses[statuses.indexOf(el.status) - 1]
-            if (direction === "up") el.priority = taskPriority[taskPriority.indexOf(el.priority) + 1]
-            if (direction === "down") el.priority = taskPriority[taskPriority.indexOf(el.priority) - 1]
-        }
-        return el
-    })
-    setTasks(newTasks)
-}
-
-    const deleteTask = (taskId) => {
-        const newTasks = tasks.filter (el => el.id !== taskId)
+        const newTasks = [...tasks, newTask]
         setTasks(newTasks)
     }
 
-return (
-    <div>
 
-        <Container>
-            <AddTaskModal addNewTask={addNewTask}/>
-            <AddColumnModal addNewColumn={addNewColumn}/>
+    const changeTaskStatus = (taskId, direction) => {
+        const newTasks = tasks.map(el => {
+            if (el.id === taskId) {
+                if (direction === "right") el.status = statuses[statuses.indexOf(el.status) + 1]
+                if (direction === "left") el.status = statuses[statuses.indexOf(el.status) - 1]
+                if (direction === "up") el.priority = taskPriority[taskPriority.indexOf(el.priority) + 1]
+                if (direction === "down") el.priority = taskPriority[taskPriority.indexOf(el.priority) - 1]
+            }
+            return el
+        })
+        setTasks(newTasks)
+    }
 
-            <Row>
+    const deleteTask = (taskId) => {
+        const newTasks = tasks.filter(el => el.id !== taskId)
+        setTasks(newTasks)
+    }
 
-                {columns.map(el => <Column changeTaskStatus={changeTaskStatus} column={el} tasks={tasks} deleteTask={deleteTask}/>)}
-                {/*<Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>*/}
-                {/*<Column changeTaskStatus={changeTaskStatus} title={'progress'} tasks={tasks}/>*/}
-                {/*<Column changeTaskStatus={changeTaskStatus} title={'review'} tasks={tasks}/>*/}
-                {/*<Column changeTaskStatus={changeTaskStatus} title={'done'} tasks={tasks}/>*/}
+    return (
+        <div>
 
-            </Row>
+            <Container>
+                <AddTaskModal addNewTask={addNewTask}/>
+                <AddColumnModal addNewColumn={addNewColumn}/>
 
-        </Container>
+                <Row>
+
+                    {columns.map(el => <Column
+                        changeTaskStatus={changeTaskStatus}
+                        column={el}
+                        tasks={tasks}
+                        deleteTask={deleteTask}/>)}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'progress'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'review'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'done'} tasks={tasks}/>*/}
+
+                </Row>
+
+            </Container>
 
 
-    </div>
-);
+        </div>
+    );
 }
 
 export default App;
